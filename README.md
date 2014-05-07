@@ -1,28 +1,15 @@
-Training
-========
+# Rules for writing markdown files
 
-## 1. Advanced HTML Structuring (2 sessions 1.5/each)
-### semantic markup
-### accessibility and content flow (layout structure)
+Place a "References" section at the end of each file
 
+1. References should be an ordered list.
+2. Each list item should be a book name or a link.
 
-## 2. SMACCSS (Scalable and Modular Architecture for CSS) (2 sessions 1.5/each)
-### Selector Performance
-### Categorizing CSS Rules
-### Prototyping
-### Separation of concerns 
-### reusable components (module-based development)
+Sample:
+```markdown
+## References
 
-
-## 3. HTML5 & CSS3 overview (2 sessions 1.5/each)
-### browser compatibility (http://caniuse.com/)
-### HTML5 TAGS
-### HTML5 APIs
-### progressive enhancment
-
-
-## 4. Responsive web design with Common frameworks Overview (2 sessions 1.5/each)
-### what and why
-### grid systems overview
-### being fimilier with frameworks (bootstrap, HTML5 boilerplate)
-### Structuring the web page to be responsive
+1. [HTML Standard](http://www.whatwg.org/specs/web-apps/current-work/multipage/)
+1. [MetaExtensions](http://wiki.whatwg.org/wiki/MetaExtensions)
+1. [Meta tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
+```
