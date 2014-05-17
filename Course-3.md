@@ -256,8 +256,8 @@
    <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
 </video>
 <audio controls>
-  <source src="audio.ogg" type="audio/ogg">
-  <source src="audio.mp3" type="audio/mpeg">
+   <source src="audio.ogg" type="audio/ogg">
+   <source src="audio.mp3" type="audio/mpeg">
    <source src="audio.mp3" type="audio/wav">
 </audio>
 ```
