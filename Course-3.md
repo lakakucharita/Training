@@ -192,15 +192,63 @@
    <article>
 ```
 * **Input Types** [4]
- * **date, datetime, and datetime-local**
- * **month, time, and week**
- * **color**
- * **time**
- * **email**
- * **search**
- * **range**
- * **number**
- * **url**
+
+_Note: Performance for these inputs are currently not consistent across all HTML5-capable browsers, and should be used with caution. But a lot of these have the potential to replace JavaScript widget soffering similar functionality, garnering them some special notice._
+
+ * **date, datetime, and datetime-local** specifies an input for entering a date, a UTC-formatted date and time, or a local date and time, respectively. The **date** and **datetime-local** inputs have a built-in calendar date picker for easy data entry (returning values in _MM/DD.YYYY_ and _MM/DD/YYYY, HH:MM AM/PM_ values, respectively), while the **datetime** input accepts a string.
+```html
+<input type="date">
+<input type="datetime">
+<input type="datetime-local">
+```
+
+ * **month, time, and week** similar to the date input type, the **month** and **week** inputs have a built-in calendar date picker for easy data entry (returning values in _Month YYYY_ and _Week ##, YYYY_ values, respectively), while the **time** input accepts a pre-formatted string returning a value in _HH:MM AM/PM_ format.
+```html
+<input type="month">
+<input type="time">
+<input type="week">
+```
+
+ * **color** specifies an input for selecting a color from a built-in color picker. The value returned is the chosen color's hex code. A preset color value can be set using the "value" attribute.
+ * ```html
+<input type="color" value="#db0000">
+```
+
+ * **email** specifies an input that only accepts a valid string in email address format, and returns the string value. It is automatically validated on form submission.
+```html
+<input type="email">
+```
+ 
+ * **tel** specifies an input that accepts a string, and returns the value. A regular expression can also be set with the "pattern" attribute for validation.
+```html
+<input type="tel" pattern="[0-9]{10}">
+```
+ 
+ * **search** connects to a dataset. The **search** input then takes in a string and searches the dataset for a match; if successful, it returns the matching value. Also provides built-in suggestions and autocomplete functions.
+```html
+<input type="search" list="search-engine">
+<datalist id="search-engines">
+  <option value="Google">
+  <option value="Yahoo">
+  <option value="Bing">
+  <option value="DuckDuckGo">
+</datalist>
+```
+
+ * **range** is an input type that generates a slider and returns number-related values. Minimium and maximum ranges are set using the "min" and "max" attributes, respectively.
+```html
+<input type="range" min="1" max="10">
+```
+
+ * **number** accepts only numbers for input and returns the value. Validation is automatically done on form submission. A quantifying range can also be optionally set using the "min" and "max" attributes.
+```html
+<input type="number" min="1" max="5">
+```
+
+ * **url** accepts a string in the format of a URL address. Validation is automatically done on form submission and returns the value.
+```html
+<input type="url">
+```
 
 ### HTML5 Feature APIs (25 minutes) [3]
 * **Canvas**
