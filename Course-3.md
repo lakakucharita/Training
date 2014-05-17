@@ -270,8 +270,62 @@
 
 
 ### CSS3 Features and Properties (30 minutes) [5]
-* **CSS pixel calculations**
-* **Border-radius, border-image, and outline**
+* **CSS length calculations** is possible in CSS3 using the calc() property, which lets you do basic math calculations to compute a length value. Useful for computing widths and heights and compensating for margins.
+```html
+   <div class="wrapper">
+      <div class="side">...</div>
+      <div class="main">...</div>
+   </div>
+```
+```css
+   .wrapper{
+      width:80%;
+      position:relative;
+   }
+   .side{
+      width:80px;
+      position:relative;
+      margin-right:1em;
+      background:#F60;
+   }
+   .main{
+      width:calc(100% - 1em);
+      position:relative;
+      background:#FC0;
+   }
+   
+```
+* **Border-radius, border-image, and outline** are additional border decorations for elements. *Border-radius* lets you create rounded corners, while *border-image* allows you to specify an image file to fill the border, provided you set a border width first. *Outline* is similar to border (including the shorthand), except it is not included in the outlined element's computed width and height, instead the outline is drawn above the element.
+```html
+   <div class="rounded-div">...</div>
+   <div class="circle-div">...</div>
+   <div class="bordered-div">...</div>
+   <div class="outlined-div">...</div>
+```
+```css
+   .rounded-div{
+      height:100px;
+      width:200px;
+      border-radius:20px 10px 40px 80px
+   }
+   .rounded-div{
+      height:100px;
+      width:100px;
+      border-radius:50%;
+   }
+   .bordered-div{
+      height:20px;
+      width:100px;
+      border-width: 10px 20px 5px 25px;
+      border-image: url("border-image.png") 10 20 5 25 repeat stretch;
+   }
+   .rounded-div{
+      height:100px;
+      width:100px;
+      outline:4px solid #DB0000;
+   }
+```
+
 * **Box-shadow and text-shadow**
 * **Gradients and RGBA, opacity**
 * **Counters**
@@ -303,3 +357,4 @@
 6. **Can I Use? Browser Compatability Tables for Modern Web Features** (http://caniuse.com)
 7. **A List Apart: Understanding Progressive Enhancement** (http://alistapart.com/article/understandingprogressiveenhancement)
 8. **A List Apart: Progressive Enhancement with CSS** (http://alistapart.com/article/progressiveenhancementwithcss8
+9. **CSS Tricks** (http://css-tricks.com/)
