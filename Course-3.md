@@ -17,7 +17,7 @@
    - A large percentage of our users still use legacy browsers like IE8 and below, which do not support HTML5 and CSS3
     - Our websites' functionality and presentation should not become entirely dependent on HTML5 and CSS3 alone; they should not become crutches to development
 
-### Notable HTML5 Tags (25 minutes)
+### Notable HTML5 Tags (30 minutes)
 * **Semantic Elements** [3]
  * **header** represents a group  of introductory or navigational aids. A header element is intended to optionally contain the section’s heading (an h1–h6 element or an hgroup element), but this is not required. It isn also used to wrap a section’s table of contents, a search form, or any relevant logos.
 ```html
@@ -226,12 +226,12 @@ _Note: Performance for these inputs are currently not consistent across all HTML
  
  * **search** connects to a dataset. The **search** input then takes in a string and searches the dataset for a match; if successful, it returns the matching value. Also provides built-in suggestions and autocomplete functions.
 ```html
-<input type="search" list="search-engine">
+<input type="search" list="search-engines">
 <datalist id="search-engines">
-  <option value="Google">
-  <option value="Yahoo">
-  <option value="Bing">
-  <option value="DuckDuckGo">
+   <option value="Google">
+   <option value="Yahoo">
+   <option value="Bing">
+   <option value="Duck Duck Go">
 </datalist>
 ```
 
@@ -250,14 +250,36 @@ _Note: Performance for these inputs are currently not consistent across all HTML
 <input type="url">
 ```
 
-### HTML5 Feature APIs (25 minutes) [3]
-* **Canvas**
-* **Video and Audio**
-* **Local Storage**
-* **Web Workers**
-* **Geolocation**
-* **Offline Support**
-* **History**
+### HTML5 Feature APIs (20 minutes) [3]
+* **Canvas** in a nutshell is a rectangle in your page where you can use JavaScript to draw anything you want in real-time. You can have more than one <canvas> element on the same page. Each canvas will show up in the DOM, and each canvas maintains its own state. If you give each canvas an id attribute, you can access them just like any other element.
+```html
+<canvas id="myCanvas" width="300" height="225"></canvas>
+```
+
+* **Video and Audio** elements allow direct embedding of media content into HTML pages. However, these can be tricky to use as there are no defined universal HTML5 video and audio codecs for playback across all browsers; as a result, multiple file types (specifically OGG/MP4/WEBM for video, and OGG/MP3/WAV for audio) need to be embedded for cross-browser performance and to support mobile devices. The **video** element can accept subtitle tracks in VTT format.
+```html
+<video width="320" height="240" controls>
+   <source src="movie.mp4" type="video/mp4">
+   <source src="movie.ogg" type="video/ogg">
+   <source src="movie.webm" type="video/webm">
+   <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+</video>
+<audio controls>
+  <source src="audio.ogg" type="audio/ogg">
+  <source src="audio.mp3" type="audio/mpeg">
+   <source src="audio.mp3" type="audio/wav">
+</audio>
+```
+* **Local Storage** is a feature in HTML5 for websites to store information on your computer and retrieve it later. Unlike cookies, it is built for large quantities of information and does not require any additional HTTP requests once instantiated, accessed instead via JavaScript. Local Storage makes use of key/value pairs to store information. Currently limited to string-to-=string mappings. Another limitation: saved information is stored on local computer only.
+
+* **Web Workers** provide a standard method for browsers to run JavaScript in the background, spawning multiple “threads” that all run at approximately the same time. These “background threads” can do complex mathematical calculations, make network requests, or access local storage while the main web page responds to the user scrolling, clicking, or typing. Useful for web applications that make use of real-time data rendering and computations.
+
+* **Geolocation** feature allows users to provide their location to web applications; simply put, it exposes latitudinal and longitudinal information to JavaScript on a page. Can be difficult to use depending on the positioning hardware of the user; mobile devices will provide geolocation data easily, while desktop computers may not have the necessary networking equipment to connect to the API. Also, the API requires opting-in with explicit permission from the user.
+
+* **Offline Support** enables websites to function offline without an internet connection. When enabled on a website, the web server instructs the browser to download specific assets needed to function offline. These instructions are in the form of a cache manifest file. Mostly used in mobile websites when saved to a home screen of a mobile device.
+
+* **History** API in HTML5 provides a standardized way to manipulate the browser history via script. You can add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser’s back button. This means that the URL can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don’t ever perform a full page refresh. Great for MVC applications.
+
 
 ### CSS3 Features and Properties (30 minutes) [5]
 * **CSS pixel calculations**
