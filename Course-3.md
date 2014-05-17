@@ -11,7 +11,7 @@
  * New selector matches and pseudo-classes (ex. element[attribute*="value"], :nth-child, :nth-last-of-type, )
 * **Should you start coding with HTML5/CSS3?**
  * **Yes...** 
-   - As more users continue to adopt modern browsers, our websites should be ready to take advantage of these features to give users a betetr experience when available
+   - As more users continue to adopt modern browsers, our websites should be ready to take advantage of these features to give users a better user experience when available
     - Eventually these will become the baseline standards for web development, and old code may obsoleted if not brought up to speed
  * **...but with caution!**
    - A large percentage of our users still use legacy browsers like IE8 and below, which do not support HTML5 and CSS3
@@ -20,9 +20,43 @@
 ### Notable HTML5 Tags (25 minutes)
 * **Semantic Elements** [3]
  * **header**
-
+Represents a group  of introductory or navigational aids. A header element is intended to optionally contain the section’s heading (an h1–h6 element or an hgroup element), but this is not required. It isn also used to wrap a section’s table of contents, a search form, or any relevant logos.
+```html
+   <header>
+      <h1>My Site</h1>
+      <p>Welcome to my site!</p>
+   </header>
+```
  * **hgroup**
+Represents the heading of a section. It is used to group a set of h1–h6 elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines.
+```html
+   <hgroup>
+      <h1>Connecting customers to opportunities</h1>
+      <h2>HSBC aims to be where the growth is, helping businesses to thrive and economies 
+          to prosper and enabling people to realise their ambitions. HSBC Group Chief 
+          Executive Stuart Gulliver outlines the Group's strategy and purpose.</h2>
+   </hgroup>
+   <article>...</article>
+```
  * **footer**
+Represents a footer for its nearest ancestor sectioning content or sectioning root element. Typically contains information about its section such as its author, links to related documents, copyright data, and similar. When contianing entire sections, a footer can represent appendices, indexes, long colophons, verbose license agreements, and other such content.
+```html
+   <footer>
+      <nav>
+         <p>
+            <a href="/toc.html">Terms and conditions</a>
+            <a href="/privacy.html">Privacy policy</a>
+            <a href="/cookies.html">Cookie policy</a>
+            <a href="/accessbility.html">Accessibility policy</a>
+         </p>
+      </nav>   
+      <p>No endorsement or approval of any third parties or their advice, opinions, 
+         information, products or services is expressed or implied by any information 
+         on this Site or by any hyperlinks to or from any third party websites or pages. 
+         Your use of this website is subject to the terms and conditions governing it. 
+         Please read these terms and conditions before using the website.</p>
+   </footer>
+```
  * **section**
  * **nav**
  * **article**
