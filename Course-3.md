@@ -1,12 +1,26 @@
 ## HTML5 & CSS3 overview (2 sessions 1.5/each)
 ### Brief Overview of HTML/CSS Development (10 minutes)
 * **What has changed from HTML4 to HTML5** [1]
+ * New elements for better structure (ex. article, section, nav)
+ * New Feature APIs (ex. media element APIs, offline API)
+ * New and updated attributes for existing elements (ex. new types for inputs)
+ * Obsoleted elements and attributes (ex. basefont, frameset, applet, "version" in html)
 * **What has changed from CSS2/2.1 to CSS3** [2]
+ * New properties (ex. box-shadow, border-radius)
+ * New functions (ex. calc(), media queries)
+ * New selector matches and pseudo-classes (ex. element[attribute*="value"], :nth-child, :nth-last-of-type, )
 * **Should you start coding with HTML5/CSS3?**
+ * **Yes...** 
+   - As more users continue to adopt modern browsers, our websites should be ready to take advantage of these features to give users a betetr experience when available
+    - Eventually these will become the baseline standards for web development, and old code may obsoleted if not brought up to speed
+ * **...but with caution!**
+   - A large percentage of our users still use legacy browsers like IE8 and below, which do not support HTML5 and CSS3
+    - Our websites' functionality and presentation should not become entirely dependent on HTML5 and CSS3 alone; they should not become crutches
 
 ### Notable HTML5 Tags (25 minutes)
 * **Semantic Elements** [3]
  * **header**
+
  * **hgroup**
  * **footer**
  * **section**
@@ -40,7 +54,7 @@
 * **CSS pixel calculations**
 * **Border-radius, border-image, and outline**
 * **Box-shadow and text-shadow**
-* **Gradients and RGBA**
+* **Gradients and RGBA, opacity**
 * **Counters**
 * **Web and Icon Fonts**
 * **Media Queries**
