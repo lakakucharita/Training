@@ -18,15 +18,15 @@
     - Our websites' functionality and presentation should not become entirely dependent on HTML5 and CSS3 alone; they should not become crutches to development
 
 ### Notable HTML5 Tags (30 minutes)
-* **Semantic Elements** [3]
- * **header** represents a group  of introductory or navigational aids. A header element is intended to optionally contain the section’s heading (an h1–h6 element or an hgroup element), but this is not required. It isn also used to wrap a section’s table of contents, a search form, or any relevant logos.
+####**Semantic Elements** [3]
+* **header** represents a group  of introductory or navigational aids. A header element is intended to optionally contain the section’s heading (an h1–h6 element or an hgroup element), but this is not required. It isn also used to wrap a section’s table of contents, a search form, or any relevant logos.
 ```html
    <header>
       <h1>My Site</h1>
       <p>Welcome to my site!</p>
    </header>
 ```
- * **hgroup** represents the heading of a section. It is used to group a set of h1–h6 elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines.
+* **hgroup** represents the heading of a section. It is used to group a set of h1–h6 elements when the heading has multiple levels, such as subheadings, alternative titles, or taglines.
 ```html
    <hgroup>
       <h1>Connecting customers to opportunities</h1>
@@ -36,7 +36,7 @@
    </hgroup>
    <article>...</article>
 ```
- * **footer** represents a footer for its nearest ancestor sectioning content or sectioning root element. Typically contains information about its section such as its author, links to related documents, copyright data, and similar. When contianing entire sections, a footer can represent appendices, indexes, long colophons, verbose license agreements, and other such content. Not required to be placed at the end of a document.
+* **footer** represents a footer for its nearest ancestor sectioning content or sectioning root element. Typically contains information about its section such as its author, links to related documents, copyright data, and similar. When contianing entire sections, a footer can represent appendices, indexes, long colophons, verbose license agreements, and other such content. Not required to be placed at the end of a document.
 ```html
    <footer>
       <nav>
@@ -54,7 +54,7 @@
          Please read these terms and conditions before using the website.</p>
    </footer>
 ```
- * **section** represents a generic document or application. Essentially a thematic grouping of content, typically with a heading. Should be used for content segregation and division for major sections; for example, chapters or numbered sections for online documentation; or for an article page, sections can be used to segregate the introduction, articles, and contact information.
+* **section** represents a generic document or application. Essentially a thematic grouping of content, typically with a heading. Should be used for content segregation and division for major sections; for example, chapters or numbered sections for online documentation; or for an article page, sections can be used to segregate the introduction, articles, and contact information.
 ```html
    <article>
       <hgroup>
@@ -89,7 +89,7 @@
       </footer>
    <article>
 ```
- * **nav** represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element — only sections that consist of major navigation blocks are appropriate for the nav element. Not required for footer links to common pages, such as "Terms and Conditions", etc.
+* **nav** represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element — only sections that consist of major navigation blocks are appropriate for the nav element. Not required for footer links to common pages, such as "Terms and Conditions", etc.
 ```html
    <section>
       <hgroup>
@@ -110,7 +110,7 @@
    </section>
    <section>...</section>
 ```
- * **article** represents a component of a page that consists of a self-contained composition in a document, page, application, or site and that is intended to be independently distributable or reusable, e.g. in syndication. Essentially an independent item of content.
+* **article** represents a component of a page that consists of a self-contained composition in a document, page, application, or site and that is intended to be independently distributable or reusable, e.g. in syndication. Essentially an independent item of content.
 ```html
    <article>
       <hgroup>
@@ -131,7 +131,7 @@
    <article>
    <article>...</article>
 ```
- * **aside** represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Can be used for typographical effects like pull quotes or sidebars and for other content considered separate from the main content of the page.
+* **aside** represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Can be used for typographical effects like pull quotes or sidebars and for other content considered separate from the main content of the page.
 ```html
    <article>
       <hgroup>
@@ -159,7 +159,7 @@
       <footer>...</footer>
    <article>
 ```
- * **time** represents either a time on a 24 hour clock, or a precise date in the proleptic Gregorian calendar, optionally with a time and a time-zone offset, that is machine-readable.
+* **time** represents either a time on a 24 hour clock, or a precise date in the proleptic Gregorian calendar, optionally with a time and a time-zone offset, that is machine-readable.
 ```html
    <article>
       <hgroup>
@@ -172,7 +172,7 @@
       <footer>...</footer>
    <article>
 ```
- * **mark** represents a run of text in one document marked or highlighted for reference purposes.
+* **mark** represents a run of text in one document marked or highlighted for reference purposes.
 ```html
    <article>
       <hgroup>...</hgroup>
@@ -191,40 +191,35 @@
       <footer>...</footer>
    <article>
 ```
-* **Input Types** [4]
 
-_Note: Performance for these inputs are currently not consistent across all HTML5-capable browsers, and should be used with caution. But a lot of these have the potential to replace JavaScript widget soffering similar functionality, garnering them some special notice._
+####**Input Types** [4]
+<sub>_Note: Performance for these inputs are currently not consistent across all HTML5-capable browsers, and should be used with caution. But a lot of these have the potential to replace JavaScript widget soffering similar functionality, garnering them some special notice._</sub>
 
- * **date, datetime, and datetime-local** specifies an input for entering a date, a UTC-formatted date and time, or a local date and time, respectively. The **date** and **datetime-local** inputs have a built-in calendar date picker for easy data entry (returning values in _MM/DD.YYYY_ and _MM/DD/YYYY, HH:MM AM/PM_ values, respectively), while the **datetime** input accepts a string.
+* **date, datetime, and datetime-local** specifies an input for entering a date, a UTC-formatted date and time, or a local date and time, respectively. The **date** and **datetime-local** inputs have a built-in calendar date picker for easy data entry (returning values in _MM/DD.YYYY_ and _MM/DD/YYYY, HH:MM AM/PM_ values, respectively), while the **datetime** input accepts a string.
 ```html
 <input type="date">
 <input type="datetime">
 <input type="datetime-local">
 ```
-
- * **month, time, and week** similar to the date input type, the **month** and **week** inputs have a built-in calendar date picker for easy data entry (returning values in _Month YYYY_ and _Week ##, YYYY_ values, respectively), while the **time** input accepts a pre-formatted string returning a value in _HH:MM AM/PM_ format.
+* **month, time, and week** similar to the date input type, the **month** and **week** inputs have a built-in calendar date picker for easy data entry (returning values in _Month YYYY_ and _Week ##, YYYY_ values, respectively), while the **time** input accepts a pre-formatted string returning a value in _HH:MM AM/PM_ format.
 ```html
 <input type="month">
 <input type="time">
 <input type="week">
 ```
-
- * **color** specifies an input for selecting a color from a built-in color picker. The value returned is the chosen color's hex code. A preset color value can be set using the "value" attribute.
+* **color** specifies an input for selecting a color from a built-in color picker. The value returned is the chosen color's hex code. A preset color value can be set using the "value" attribute.
 ```html
 <input type="color" value="#db0000">
 ```
-
- * **email** specifies an input that only accepts a valid string in email address format, and returns the string value. It is automatically validated on form submission.
+* **email** specifies an input that only accepts a valid string in email address format, and returns the string value. It is automatically validated on form submission.
 ```html
 <input type="email">
 ```
- 
- * **tel** specifies an input that accepts a string, and returns the value. A regular expression can also be set with the "pattern" attribute for validation.
+* **tel** specifies an input that accepts a string, and returns the value. A regular expression can also be set with the "pattern" attribute for validation.
 ```html
 <input type="tel" pattern="[0-9]{10}">
 ```
- 
- * **search** connects to a dataset. The **search** input then takes in a string and searches the dataset for a match; if successful, it returns the matching value. Also provides built-in suggestions and autocomplete functions.
+* **search** connects to a dataset. The **search** input then takes in a string and searches the dataset for a match; if successful, it returns the matching value. Also provides built-in suggestions and autocomplete functions.
 ```html
 <input type="search" list="search-engines">
 <datalist id="search-engines">
@@ -234,18 +229,15 @@ _Note: Performance for these inputs are currently not consistent across all HTML
    <option value="Duck Duck Go">
 </datalist>
 ```
-
- * **range** is an input type that generates a slider and returns number-related values. Minimium and maximum ranges are set using the "min" and "max" attributes, respectively.
+* **range** is an input type that generates a slider and returns number-related values. Minimium and maximum ranges are set using the "min" and "max" attributes, respectively.
 ```html
 <input type="range" min="1" max="10">
 ```
-
- * **number** accepts only numbers for input and returns the value. Validation is automatically done on form submission. A quantifying range can also be optionally set using the "min" and "max" attributes.
+* **number** accepts only numbers for input and returns the value. Validation is automatically done on form submission. A quantifying range can also be optionally set using the "min" and "max" attributes.
 ```html
 <input type="number" min="1" max="5">
 ```
-
- * **url** accepts a string in the format of a URL address. Validation is automatically done on form submission and returns the value.
+* **url** accepts a string in the format of a URL address. Validation is automatically done on form submission and returns the value.
 ```html
 <input type="url">
 ```
@@ -255,7 +247,6 @@ _Note: Performance for these inputs are currently not consistent across all HTML
 ```html
 <canvas id="myCanvas" width="300" height="225"></canvas>
 ```
-
 * **Video and Audio** elements allow direct embedding of media content into HTML pages. However, these can be tricky to use as there are no defined universal HTML5 video and audio codecs for playback across all browsers; as a result, multiple file types (specifically OGG/MP4/WEBM for video, and OGG/MP3/WAV for audio) need to be embedded for cross-browser performance and to support mobile devices. The **video** element can accept subtitle tracks in VTT format.
 ```html
 <video width="320" height="240" controls>
@@ -273,11 +264,8 @@ _Note: Performance for these inputs are currently not consistent across all HTML
 * **Local Storage** is a feature in HTML5 for websites to store information on your computer and retrieve it later. Unlike cookies, it is built for large quantities of information and does not require any additional HTTP requests once instantiated, accessed instead via JavaScript. Local Storage makes use of key/value pairs to store information. Currently limited to string-to-=string mappings. Another limitation: saved information is stored on local computer only.
 
 * **Web Workers** provide a standard method for browsers to run JavaScript in the background, spawning multiple “threads” that all run at approximately the same time. These “background threads” can do complex mathematical calculations, make network requests, or access local storage while the main web page responds to the user scrolling, clicking, or typing. Useful for web applications that make use of real-time data rendering and computations.
-
 * **Geolocation** feature allows users to provide their location to web applications; simply put, it exposes latitudinal and longitudinal information to JavaScript on a page. Can be difficult to use depending on the positioning hardware of the user; mobile devices will provide geolocation data easily, while desktop computers may not have the necessary networking equipment to connect to the API. Also, the API requires opting-in with explicit permission from the user.
-
 * **Offline Support** enables websites to function offline without an internet connection. When enabled on a website, the web server instructs the browser to download specific assets needed to function offline. These instructions are in the form of a cache manifest file. Mostly used in mobile websites when saved to a home screen of a mobile device.
-
 * **History** API in HTML5 provides a standardized way to manipulate the browser history via script. You can add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser’s back button. This means that the URL can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don’t ever perform a full page refresh. Great for MVC applications.
 
 
