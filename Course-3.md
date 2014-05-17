@@ -210,7 +210,7 @@ _Note: Performance for these inputs are currently not consistent across all HTML
 ```
 
  * **color** specifies an input for selecting a color from a built-in color picker. The value returned is the chosen color's hex code. A preset color value can be set using the "value" attribute.
- * ```html
+```html
 <input type="color" value="#db0000">
 ```
 
