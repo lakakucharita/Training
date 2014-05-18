@@ -405,55 +405,55 @@ li:before {
 ```
 ```stylesheet
 @font-face {
-   font-family:"Roboto";
-   src:url("webfonts/roboto.medium.eot");
-   src:url("webfonts/roboto.medium.eot?#iefix") format("embedded-opentype"),
-       url("webfonts/roboto.medium.ttf") format("truetype"),
-       url("webfonts/roboto.medium.woff") format("woff"),
-       url("webfonts/roboto.medium.svg#robotomedium") format("svg");
-   font-weight:normal;
-   font-style:normal;
+    font-family:"Roboto";
+    src:url("webfonts/roboto.medium.eot");
+    src:url("webfonts/roboto.medium.eot?#iefix") format("embedded-opentype"),
+        url("webfonts/roboto.medium.ttf") format("truetype"),
+        url("webfonts/roboto.medium.woff") format("woff"),
+	url("webfonts/roboto.medium.svg#robotomedium") format("svg");
+    font-weight:normal;
+    font-style:normal;
 }
 .myfont{
-   font-size:1.2em;
-   font-family:"Roboto", sans-serif;
+    font-size:1.2em;
+    font-family:"Roboto", sans-serif;
 }
 @font-face {
-	font-family:"Icons";
-	src:url("../webfonts/erik.escueta.net.icons.eot");
-	src:url("../webfonts/erik.escueta.net.icons.eot?#iefix") format("embedded-opentype"),
-		url("../webfonts/erik.escueta.net.icons.ttf") format("truetype"),
-		url("../webfonts/erik.escueta.net.icons.woff") format("woff"),
-		url("../webfonts/erik.escueta.net.icons.svg#icons") format("svg");
-	font-weight: normal;
-	font-style: normal;
+    font-family:"Icons";
+    src:url("../webfonts/erik.escueta.net.icons.eot");
+    src:url("../webfonts/erik.escueta.net.icons.eot?#iefix") format("embedded-opentype"),
+	url("../webfonts/erik.escueta.net.icons.ttf") format("truetype"),
+	url("../webfonts/erik.escueta.net.icons.woff") format("woff"),
+	url("../webfonts/erik.escueta.net.icons.svg#icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 .myicons{
-   font-size:1.2em;
-   font-family:'Icons' !important;
-	speak:none;
-	font-style:normal;
-	font-weight:normal;
-	font-variant:normal;
-	text-transform:none;
-	line-height:1;
-	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
+    font-size:1.2em;
+    font-family:'Icons' !important;
+    speak:none;
+    font-style:normal;
+    font-weight:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 ```
 * **Media Queries** gives you the ability to specify diffent CSS classes and properties for different media types and viewport properties.
+```html
+<div class="mobile">...</div>
+<div class="desktop>...</div>
+```
 ```stylesheet
 @media screen and (max-width:640px){
-    .xs{display:inherit;}
-    .sm{display:none;}
-    .md{display:none;}
-    .lg{display:none;}
+    .mobile{display:inherit;}
+    .desktop{display:none;}
 }
 @media screen and (min-width:641px){
-    .xs{display:none;}
-    .sm{display:inherit;}
-    .md{display:none;}
-    .lg{display:none;}
+    .mobile{display:none;}
+    .desktop{display:inherit;}
 }
 ```
 * **Multiple Backgrounds** allows assigning more than one image to the **background-image** property using a comma-separated value syntax, with the first declared image as the topmost layer then wprking downwards through the stack. To apply different **background** properties to each image, the same comma-separated value syntax is used in correlation. For easier input, a shorthand syntax can also be used.
@@ -511,15 +511,30 @@ li:before {
 ```
 * **CSS Animation Callbacks** specifies a JavaScript function to be called when a CSS animation is finished running. The callback is globally set via JavaScript, and requires further setup if you want to execute callbacks only for specific CSS animations. Not as simple to set up as in other JavaScript frameworks like jQuery, where you can run a callback on a specific event bubble.
 
-* **Box-sizing and Flexbox**
+* **Box-sizing and Flexbox** are new methods for adjusting the box model computations for HTML elements. **Box-sizing** when given the "border-box" value makes padding inclusive of width calculations, as opposed to the default "content-box" where padding isn't part of the visible width (declared or inherited). The ```box-sizing:border-box``` property setting is technically the same as elements in Quirks Mode of IE6 ad below. **Flexbox** is a layout mode, set using the property ```display:flex``` or ```display:inline-flex```. **Flexbox** is essentially a native CSS layout mode for creating a flexible grid layout without the need for floats. Also, the margins of a Flexbox container do not collapse with the margins of its contents for easier UI debugging and refinement.
+![An example of Flexbox from MDN](https://developer.mozilla.org/files/3739/flex_terms.png)
 
 ### Browser Compatibility and Progressive Enhancement (15 minutes)
 * **Cross-Browser and Multi-version Support** [6]
-* **Progressive Enhancement vs. Graceful Degradation** [7]
-* **Browser detection vs. Feature detection**
-* **Progressive Enhancement Techniques using CSS** [8]
- * **Testing for IE**
- * **Conditional Classes**
+
+Currently, many CSS3 selectors, features and properties are enabled and available on the latest versions of Chrome, Safari and Firefox in both desktop and mobile. The same holds true as well for HTML5 features, tags, and APIs. However, with regards to Internet Explorer, shims or JavaScript libraries are needed to get them working in IE8, and very few in a limited capacity on IE7 and below. IE9 also has some limited HTML5 and CSS3 support, with performance and covergae only on par with other browsers starting in IE10.
+
+It also beggars consideration that a number of CSS3 properties have proprietary implementations in specific browsers, requiring vendor prefixing befire they can be rendered. Webkit, for example, would require a ```-webkit``` prefix; while Firefox requires ```-moz``` in specific CSS3 properties to render in Firefox.
+
+* **Progressive Enhancement vs. Graceful Degradation - Which is better?** [7]
+
+Given the lack of consistency across browser platforms, there is considerable risk to using HTML5 and CSS3 in production, especially when supporting legacy browsers like IE8 and below. There are two approaches available to address this concenrn.
+
+**Graceful degradation** focuses on building websites for the most advanced and capable browsers first, then patching them to work in older browsers. An example: building an article page layout using HTML5 tags or CSS3 properties, then patch any inconsistencies for unsupported browsers. Naturally, this means your wbesite's experience will not be consistent across all browsers, and may entail a lot of workarounds to get it working on older browsers.
+
+**Progressive enhancements** in contrast takes a content-focused approach. Using the previous example, the article page layout is first built by structuring the content without using HTML5 or CSS3. Once the structure is deemed consistent in your target browsers - uncluding older ones - then you can start adding HTML5 or CSS3 features and properties to enhance your site for users with modern browsers.
+
+With this in mind, it is recommended to approach your UI development with **Prrogressive Enhancement** to keep everything balanced between browsers and your code clean without patchworks or workarounds. Just because we **can** use it doesn't mean we **need** to use it; making a page work and display consistently everywhere is more important than adding new features and tags.
+
+* **Progressive Enhancement Techniques** [8]
+  - **Separation of Concerns**
+  - **Multiple Stylesheets and Alternate Media Types**
+  - **Conditional Classes and Comments**
 
 ### References
 1. **HTML5 Differences from HTML4** (http://html-differences.whatwg.org)
@@ -529,5 +544,5 @@ li:before {
 5. **12 Awesome CSS3 Features** (http://tutorialzine.com/2013/10/12-awesome-css3-features-you-can-finally-use/)
 6. **Can I Use? Browser Compatability Tables for Modern Web Features** (http://caniuse.com)
 7. **A List Apart: Understanding Progressive Enhancement** (http://alistapart.com/article/understandingprogressiveenhancement)
-8. **A List Apart: Progressive Enhancement with CSS** (http://alistapart.com/article/progressiveenhancementwithcss8
+8. **A List Apart: Progressive Enhancement with CSS** (http://alistapart.com/article/progressiveenhancementwithcss)
 9. **CSS Tricks** (http://css-tricks.com/)
