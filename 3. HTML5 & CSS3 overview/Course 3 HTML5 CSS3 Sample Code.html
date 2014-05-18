@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Definitely Untested</title>
+<style type="text/css">
+    @font-face {
+        font-family:"Roboto";
+        src:url("webfonts/roboto.medium.eot");
+        src:url("webfonts/roboto.medium.eot?#iefix") format("embedded-opentype"),
+            url("webfonts/roboto.medium.ttf") format("truetype"),
+            url("webfonts/roboto.medium.woff") format("woff"),
+            url("webfonts/roboto.medium.svg#robotomedium") format("svg");
+        font-weight:normal;
+        font-style:normal;
+    }
+    /*Icon Typeface*/
+    @font-face {
+        font-family:"Icons";
+        src:url("webfonts/icons.eot");
+        src:url("webfonts/icons.eot?#iefix") format("embedded-opentype"),
+            url("webfonts/icons.ttf") format("truetype"),
+            url("webfonts/icons.woff") format("woff"),
+            url("webfonts/icons.svg#icomoon") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+    .icon{
+        font-family:'Icons' !important;
+        speak:none;
+        font-style:normal;
+        font-weight:normal;
+        font-variant:normal;
+        text-transform:none;
+        line-height:1;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+    }
+    body, html{
+        font-family:"Roboto";
+        font-size:1em;
+    }
+    h1{
+        margin:0;
+        color:#DB0000;
+    }
+    h2{
+        font-size:108%;
+        font-weight:normal;
+        color:#666;
+        margin-top:0;
+    }
+    form{
+        display: inline-block;
+        padding:12px;
+        outline:1px solid #DB0000;
+    }
+    label{
+        display:block;
+    }
+    label:after{
+        content:": ";
+    }
+    input{
+        box-sizing:border-box;
+        padding:4px;
+        margin-bottom:12px;
+        display:block;
+        width:100%;
+    }
+</style>
+</head>
+<body>
+<!--[if lte IE 6]>
+    <div class="ie-browser old-ie"
+<![endif]-->
+<!--[if IE 7]>
+    <div class="ie-browser ie7"
+<![endif]-->
+<!--[if IE 8]>
+    <div class="ie-browser ie8"
+<![endif]-->
+<!--[if gte IE 9]>
+    <div class="ie-browser modern-ie"
+<![endif]-->
+<!--[if !IE]> -->
+    <div class="modern-browser">
+<!-- <![endif]-->
+        
+        <section class="html5-inputs">
+            <hgroup>
+                <h1>HTML5 Input Types</h1>
+                <h2>New input types available in HTML5</h2>
+            </hgroup>
+            <form>
+                <div>
+                    <label>date</label>
+                    <input type="date">   
+                </div>
+                <div>
+                    <label>datetime</label>
+                    <input type="datetime">            
+                <div>
+                    <label>datetime-local</label>
+                    <input type="datetime-local">
+                </div>
+                <div>
+                    <label>month</label>
+                    <input type="month">
+                </div>
+                <div>
+                    <label>time</label>
+                    <input type="time">
+                </div>
+                <div>
+                    <label>week</label>
+                    <input type="week">
+                </div>
+                <div>
+                    <label>color</label>
+                    <input type="color" value="#db0000">
+                </div>
+                <div>
+                    <label>email</label>
+                    <input type="email">
+                </div>
+                <div>
+                    <label>tel</label>
+                    <input type="tel" pattern="[0-9]{10}">
+                </div>
+                <div>
+                    <label>search</label>
+                    <input type="search" list="search-engines">
+                    <datalist id="search-engines">
+                       <option value="Google">
+                       <option value="Yahoo">
+                       <option value="Bing">
+                       <option value="Duck Duck Go">
+                    </datalist>
+                </div>
+                <div>
+                    <label>range</label>
+                    <input type="range" min="1" max="10">
+                </div>
+                <div>
+                    <label>number</label>
+                    <input type="number" min="1" max="5">
+                </div>
+                <div>
+                    <label>url</label>
+                    <input type="url">
+                </div>
+            </form>
+        </section>
+        
+        
+    </div>
+</body>
+</html>
