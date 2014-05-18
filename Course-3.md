@@ -277,7 +277,7 @@
       <div class="main">...</div>
    </div>
 ```
-```css
+```stylesheet
    .wrapper{
       width:80%;
       position:relative;
@@ -301,8 +301,9 @@
    <div class="circle-div">...</div>
    <div class="bordered-div">...</div>
    <div class="outlined-div">...</div>
+   <p class=outlined-text>Hello world</p>
 ```
-```css
+```stylesheet
    .rounded-div{
       height:100px;
       width:200px;
@@ -319,16 +320,60 @@
       border-width: 10px 20px 5px 25px;
       border-image: url("border-image.png") 10 20 5 25 repeat stretch;
    }
-   .rounded-div{
+   .outlined-div{
+      height:100px;
+      width:100px;
+      outline:4px solid #DB0000;
+   }
+   .outlined-text{
       height:100px;
       width:100px;
       outline:4px solid #DB0000;
    }
 ```
 
-* **Box-shadow and text-shadow**
-* **Gradients and RGBA, opacity**
+* **Box-shadow and text-shadow** lets you add native shadows to block and text elements, respectively. With **box-shadow** you can specify whether it is inset or not, the offset length, apply multiple shadows, and also the blur radius, spread and color. For **text-shadow** you can set the offset length and blur radius.
+```html
+<div class=“boxshadow”>
+<p class=“textshadow”>The quick brown fox jumped over the lazy dog.</p>
+</div>
+```
+```stylesheet
+.boxshadow{
+background:#999;
+box-shadow:8px 8px 12px 8px #000;
+}
+.textshadow{
+margin:12px;
+color:#FFF
+text-shadow:8px 4px 2px #DB0000;
+}
+```
+* **Gradients and RGBA, opacity** allows setting background color gradients. Combined with RGBA, it is also possible to customize your own gradient steps and with differing levels of opcacity. Opacity can also be set as a separate CSS property. One issue with gradients is its lack of unified support across browsers, requiring multiple vendor-prefixed gradient properties to ensure consistent rendering. IE6-9 in particular use a different property for gradients, **filter**, which does not support all gradient directions.
+```html
+<div class="outerbox">
+   <div class="innerbox">...</div>
+</div>
+```
+```stylesheet
+.outerbox{
+   height:100px;
+   width:100px;
+   position:relative;
+   overflow:visible;
+   background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(41,137,216,0) 50%,rgba(32,124,202,0.02) 51%,rgba(125,185,232,1) 100%);
+}
+.innerbox{
+   height:80px;
+   width:200px;
+   position:aboslute;
+   top:30px;
+   left:30px;
+   background: linear-gradient(to bottom, #ff3019 0%,#9e0303 100%);
+   opacity:0.8;
+}
 * **Counters**
+
 * **Web and Icon Fonts**
 * **Media Queries**
 * **Multiple Backgrounds**
