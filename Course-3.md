@@ -372,18 +372,145 @@ text-shadow:8px 4px 2px #DB0000;
    background: linear-gradient(to bottom, #ff3019 0%,#9e0303 100%);
    opacity:0.8;
 }
-* **Counters**
+```
+* **Counters** are native CSS variables which values may be incremented using CSS rules to keep track of how many times an element is used. The value of a counter is manipulated through the use of _counter-reset_ and _counter-increment_ properties, which can be displayed on a page using the _counter()_ or _counters()_ function of the _content_ property.
+```html
+<ol class="level1">
+   <li>This is Item 1</li>
+   <li>This is Item 2</li>
+   <ol class="level2">
+      <li>This is Item 2.1</li>
+      <li>This is Item 2.2</li>
+      <ol class="level3">
+         <li>This is Item 2.1.1</li>
+      </ol>
+   </ol>
+</ol>
+```
+```stylesheet
+ol{
+   counter-reset:level;
+   list-style-type: none;
+}
+li:before {
+  counter-increment: level;
+  content: counters(level,".") " > "; 
+}
+```
+* **Web and Icon Fonts** lets developers specify their own custom fonts for use in their websites. Icon fonts are also possible using SVG-generated webfonts.
+<p class="myfont">This line of text uses a custom webfont called Roboto. Below you'll find a couple of icons from a custom icon font.</p>
+<p class="myicons">&#x25b2; &#x25b6; &#x25bc; &#x25b4; &#x2795; &#x2796; &#x2715;</p>
+<p class="myicons">&#xe60a;</p>
+```
+```stylesheet
+@font-face {
+   font-family:"Roboto";
+   src:url("webfonts/roboto.medium.eot");
+   src:url("webfonts/roboto.medium.eot?#iefix") format("embedded-opentype"),
+       url("webfonts/roboto.medium.ttf") format("truetype"),
+       url("webfonts/roboto.medium.woff") format("woff"),
+       url("webfonts/roboto.medium.svg#robotomedium") format("svg");
+   font-weight:normal;
+   font-style:normal;
+}
+.myfont{
+   font-size:1.2em;
+   font-family:"Roboto", sans-serif;
+}
+@font-face {
+	font-family:"Icons";
+	src:url("../webfonts/erik.escueta.net.icons.eot");
+	src:url("../webfonts/erik.escueta.net.icons.eot?#iefix") format("embedded-opentype"),
+		url("../webfonts/erik.escueta.net.icons.ttf") format("truetype"),
+		url("../webfonts/erik.escueta.net.icons.woff") format("woff"),
+		url("../webfonts/erik.escueta.net.icons.svg#icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+.myicons{
+   font-size:1.2em;
+   font-family:'Icons' !important;
+	speak:none;
+	font-style:normal;
+	font-weight:normal;
+	font-variant:normal;
+	text-transform:none;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+```
+* **Media Queries** gives you the ability to specify diffent CSS classes and properties for different media types and viewport properties.
+```stylesheet
+@media screen and (max-width:640px){
+    .xs{display:inherit;}
+    .sm{display:none;}
+    .md{display:none;}
+    .lg{display:none;}
+}
+@media screen and (min-width:641px){
+    .xs{display:none;}
+    .sm{display:inherit;}
+    .md{display:none;}
+    .lg{display:none;}
+}
+```
+* **Multiple Backgrounds** allows assigning more than one image to the **background-image** property using a comma-separated value syntax, with the first declared image as the topmost layer then wprking downwards through the stack. To apply different **background** properties to each image, the same comma-separated value syntax is used in correlation. For easier input, a shorthand syntax can also be used.
+```html
+   <div class="mybackgrounds">...</div>
+```
+```stylesheet
+   .mybackgrounds{
+      background:url("background1.jpg") center center no-repeat #000, url("background2.jpg") top left no-repeat, url("background3.jpg") bottom right no-repeat, url("background4.jpg") repeat cover;
+   }
+```
+* **CSS Columns** automatically convert an element block into columns, with native properties for setting the column gaps and rules for size and style.
+```html
+   <p class="three-columns">HSBC is one of the world's largest banking and financial services organisations. With more than 6,300 offices in both established and emerging markets, we aim to be where the growth is, connecting customers to opportunities, enabling businesses to thrive and economies to prosper, and, ultimately, helping people to fulfil their hopes and realise their ambitions. We serve around 54 million customers through our four Global Businesses: Retail Banking and Wealth Management, Commercial Banking, Global Banking and Markets, and Global Private Banking. Our network covers 75 countries and territories in Europe, the Asia-Pacific region, the Middle East, Africa, North America and Latin America. Listed on the London, Hong Kong, New York, Paris and Bermuda stock exchanges, shares in HSBC Holdings plc are held by about 216,000 in 131 countries and territories.</p>
+```
+```stylesheet
+.three-columns{   
+   column-count:3;
+   column-gap:40px;
+   column-rule:3px outset #ff00ff;
+}
+```
 
-* **Web and Icon Fonts**
-* **Media Queries**
-* **Multiple Backgrounds**
-* **CSS Columns**
-  
 ### CSS3 Properties under consideration (15 minutes) [2]
-* **Animations, Transitions and Transforms**
+* **Animations, Transitions and Transforms** i simplest form use CSS to animate elements, similar to the animation functions used in frameworks like jQuery. In general CSS animations are mainly divided into two components: **transitions** for animation properties, and **transforms** for visual manipulation. Another side component, **translate**, is essentially a grouping of multiple transforms. While CSS animations are faster than JavaScript animations and use less memory calculations, they also primarily use hardware acceleration which can be detrimental for mobile devices.
+```html
+<div class="myanimation">...</div>
+```
+```stylesheet
+.myanimation{
+   transition: all 0.5s ease;
+   background-color:#000;
+}
+.myanimation:hover{
+   transform:translate(20px, 10px) rotate(90deg) skewX(25deg);
+   background-color:#DB0000;
+}
+```
+* **CSS Animation Keyframes** allow greater granularity in defining CSS animations, by adding an **@keyframes** rule that contains your specific animation steps. You use percentages to define your animation step positions in the total playback time, or simply From-To (which is from 0% to 100% in the timeline).
+```html
+<div class="myanimation">...</div>
+```
+```stylesheet
+.myanimation{
+   background-color:#000;
+}
+.myanimation:hover{
+   animation:mykeyframes  0.5s ease infinite;
+}
+@keyframes mykeyframes {
+   0%{height:0px;}
+   50%{height:300px; transform:translate(20px, 10px) rotate(90deg) skewX(25deg); background-color:#DB0000;}
+   100%{height:0px;}
+}
+```
+* **CSS Animation Callbacks** specifies a JavaScript function to be called when a CSS animation is finished running. The callback is globally set via JavaScript, and requires further setup if you want to execute callbacks only for specific CSS animations. Not as simple to set up as in other JavaScript frameworks like jQuery, where you can run a callback on a specific event bubble.
+
 * **Box-sizing and Flexbox**
-* **Advanced Properties and 3D Transforms**
-* **Implementing Callbacks**
 
 ### Browser Compatibility and Progressive Enhancement (15 minutes)
 * **Cross-Browser and Multi-version Support** [6]
