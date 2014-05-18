@@ -195,6 +195,8 @@
 ####**Input Types** [4]
 <sub>_Note: Performance for these inputs are currently not consistent across all HTML5-capable browsers, and should be used with caution. But a lot of these have the potential to replace JavaScript widget soffering similar functionality, garnering them some special notice._</sub>
 
+For a sample demo, please see [Course 3 HTML5 CSS3 Sample Code.html](3. HTML5 & CSS3 overview/Course 3 HTML5 CSS3 Sample Code.html)
+
 * **date, datetime, and datetime-local** specifies an input for entering a date, a UTC-formatted date and time, or a local date and time, respectively. The **date** and **datetime-local** inputs have a built-in calendar date picker for easy data entry (returning values in _MM/DD.YYYY_ and _MM/DD/YYYY, HH:MM AM/PM_ values, respectively), while the **datetime** input accepts a string.
 ```html
 <input type="date">
@@ -533,8 +535,53 @@ With this in mind, it is recommended to approach your UI development with **Prro
 
 * **Progressive Enhancement Techniques** [8]
   - **Separation of Concerns**
-  - **Multiple Stylesheets and Alternate Media Types**
+  
+In order to execute progressive enhancement in your pages, you must be able to separate your HTML and CSS code into meaningful and logical modules or blocks according to the very structure of your content. For example, while having everything in a single stylesheet may reduce your HTTP calls, it does not help the user to load everything all at once when not all of the code contained is needed - it may even lengthen the initial page load. Likewise, when coding your HTML markup, you should ensure that tags and classes do not overlap, nor should they collapse; otherwise, maintenance becomes an impossible chore. Furthermore, combining CSS classes on elements may cause unintended consequences such as collapsible margins and cross-browser inconsistencies.
+
+It behooves us as web developers to learn how to structure our HTML and CSS code to lessen the confusion between our fellow developers and to ensure an optimal experience for our users.
+  - **Multiple Stylesheets and Stylesheet Targeting**
+
+Separating your stylesheets is one approach for progressive enhancement. By segregating your stylesheets, you can cherry-pick which ones are needed for the initial load, and then just load in others as required by the user's actions. In that regard, you can also use multiple stylesheets using ```@import``` in your CSS to load in HTML5 or CSS3 features if a user is, say, in a modern browsing environment; otherwise, the baseline stylesheets will serve adequately. You can also load a separate stylesheet for printing if a user requests it, using the ```media``` query property.
+```stylesheet
+@import 'screen.css' screen;
+@import 'print.css' print;
+@import url("chrome://communicator/skin/");
+@import "common.css" screen, projection;
+@import url('landscape.css') screen and (orientation:landscape);
+```
+That said, caution must also be exercised that you do not split your stylesheets too thin. A good foundation or focal point for defining your baseline would be by defining your content, and separate your classes accordingly to the content structure and requirements.
   - **Conditional Classes and Comments**
+Another method for progressive enhancement - which can also be used in conjunction with the previous approach - is to granularize and define classes and stylesheets for specific browsers natively using conditional comments. One popular method is to catch whether the user's browser is Internet Explorer using IE conditional comments:
+```html
+<body>
+	!--[if lte IE 6]>
+   	<div class="ie-browser old-ie"
+	<![endif]-->
+	<!--[if IE 7]>
+   	<div class="ie-browser ie7"
+	<![endif]-->
+	<!--[if IE 8]>
+	<div class="ie-browser ie8"
+	<![endif]-->
+	<!--[if gte IE 9]>
+	<div class="ie-browser modern-ie"
+	<![endif]-->
+	<!--[if !IE]> -->
+	<div class="modern-browser">
+	<!-- <![endif]-->
+	
+		...[some content]...
+
+	</div>
+</body>
+```
+```stylesheet
+	.ie-browser{/*styles for IE*/}
+	.ie-browser.ie8{/*styles for IE8*/}
+	.modern-browser{/*Styles for browsers not IE*/}
+```
+
+Combining these methods efficiently will help you achieve proper progressive enhancement in your pages, which in turn will help your users.
 
 ### References
 1. **HTML5 Differences from HTML4** (http://html-differences.whatwg.org)
