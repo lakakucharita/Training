@@ -66,6 +66,10 @@ Normally, there is `reset.scss` or `normalize.scss`, and some other stylesheets 
 Code samples:
 
 ```scss
+@mixin font-family($family) {
+  font-family: '#{$family}', sans-serif;
+}
+
 strong {
   @include font-family('univers-bold');
 }
