@@ -52,16 +52,16 @@ bla ... bla ... bla ...
     _doormat.scss
     _carousel.scss
     _video_player.scss
-    
+
   ...
-    
+
 ```
 
 #### Base
 
-Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.
+Base rules are the boilerplate. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page.
 
-Normally, there is `reset.scss` or `normalize.scss`, and some other stylesheets differs from projects, they all server as a boilerplate for your project.
+Normally, there is `reset.scss` or `normalize.scss`, and some other basic stylesheets depends on your projects.
 
 Code samples:
 
@@ -85,20 +85,99 @@ strong {
 
 Layout rules divide the page into sections. Layouts hold one or more modules together (Containers).
 
-Normally, there is `_grid.scss` holds the grid system to build the layouts, unless there is another grid system, like Susy is introduced.
+Normally, there is `_grid.scss` holds the grid system to build the layouts, unless there is another grid system, like you have got Susy or Bootstrap.
+
+Sample codes:
+
+```scss
+.main-content {
+  @include columns(6);
+}
+```
+
+```css
+.main-content {
+  float: left;
+  width: 47.541%; /* span 6 columns */
+  margin-right: 1.639%;
+}
+```
 
 #### Modules
 
 Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on. Sometimes, the folder is also called components, usually there is lots of files, your site should be mostly composed of tiny modules.
 
 
-
 ### How to name (BEM)?
 
-With SASS sample codes
+Sample codes:
 
+```scss
+.author {
+  color: #333;
+}
 
+author-name {
+  font-weight: bold;
+}
 
+author-avatar {
+  border: 2px solid #333;
+}
+
+author-avatar-size-small {
+  width: 100px;
+  height: 100px;
+}
+```
+
+BEM stands for "Block, Element, Modifier".
+
+#### What's a "Block"?
+
+A block is an independent entity, a "building block" of an application. A block can be either simple or compound (containing other blocks).
+
+In above sample, `author` is a block.
+
+##### Block Independence
+
+As projects grow, blocks tend to be added, removed, or moved around the page. To make this process easier, blocks must be independent.
+
+An independent block is implemented in a way that allows arbitrary placement — anywhere on the page, including nesting inside another block.
+
+From the CSS point of view it means that
+
+1. A block (or an element) must have a unique "name" (a CSS class) that could be used in a CSS rule.
+1. HTML elements must not be used in CSS selectors (.menu td) as such selectors are inherently not context-free.
+1. Cascading selectors should be avoided.
+
+##### Blocks Reiteration
+
+Blocks may appear more than once on a page.
+
+In CSS related terms, it means
+
+1. ID-based CSS selectors must not be used.
+  * Only class selectors satisfy our non-uniqueness requirement.
+
+On the JavaScript side it means:
+
+1. Blocks with similar behavior are detected unequivocally: they have the same CSS classes
+  * Using CSS class selectors allow picking all blocks with a given name to apply the required dynamic behavior.
+
+#### What's an "Element"?
+
+An element is a part of a block that performs a certain function. Elements are context-dependent: they only make sense in the context of the block they belong to.
+
+In above sample, `name`,`avatar` are elements.
+
+#### What's a "Modifier"?
+
+A modifier is a property of a block or an element that alters its look or behavior.
+
+A modifier has a name and a value. Several modifiers can be used at once.
+
+In above sample, `size-small` is a modifier for `avatar` element.
 
 ## References
 
