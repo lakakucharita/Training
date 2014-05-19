@@ -18,19 +18,76 @@ HTML formerly known as HTML5 (formerly titled Web Applications 1.0) is the fifth
 
 It means developers need to keep their knowledge updated all the time for new widely implanted features.
 
-
-## What are we talking about when referencing HTML5
+### What are we talking about when referencing HTML5
 
 ![HTML5 family](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png/1024px-HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png)
 
 The meaning varies when the context changes, in our course, the word "HTML5" is referencing mainly the initial WHATWG specification.
+
+### ... HTML5 & CSS3 ...
+
+bla ... bla ... bla ...
+
 
 
 ## SMACSS, BEM, SASS
 
 ### How to organise (SMACSS)?
 
-With SASS sample codes
+#### A sample folder structure:
+
+```
+/stylesheets/
+
+  ...
+
+  /base/
+    _reset.scss
+    _typography.scss
+  /layouts/
+    _grid.scss
+    _header.scss
+    _footer.scss
+  /modules/
+    _doormat.scss
+    _carousel.scss
+    _video_player.scss
+    
+  ...
+    
+```
+
+#### Base
+
+Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.
+
+Normally, there is `reset.scss` or `normalize.scss`, and some other stylesheets differs from projects, they all server as a boilerplate for your project.
+
+Code samples:
+
+```scss
+strong {
+  @include font-family('univers-bold');
+}
+```
+
+```css
+strong {
+  font-family: 'univers-bold', sans-serif;
+}
+```
+
+#### Layouts
+
+Layout rules divide the page into sections. Layouts hold one or more modules together (Containers).
+
+Normally, there is `_grid.scss` holds the grid system to build the layouts, unless there is another grid system, like Susy is introduced.
+
+#### Modules
+
+Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on. Sometimes, the folder is also called components, usually there is lots of files, your site should be mostly composed of tiny modules.
+
+
 
 ### How to name (BEM)?
 
