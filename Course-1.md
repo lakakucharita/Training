@@ -1,6 +1,6 @@
 # Bla ... Bla ... Bla ...
 
-## A little bit history
+## A little bit history (warm up)
 
 ### WHATWG was formed to counter W3C's decision [1]
 
@@ -19,6 +19,22 @@ HTML formerly known as HTML5 (formerly titled Web Applications 1.0) is the fifth
 It means developers need to keep their knowledge updated all the time for new widely implanted features.
 
 
+## What are we talking about when referencing HTML5
+
+![HTML5 family](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png/1024px-HTML5-APIs-and-related-technologies-by-Sergey-Mavrody.png)
+
+The meaning varies when the context changes, in our course, the word "HTML5" is referencing mainly the initial WHATWG specification.
+
+
+## SMACSS, BEM, SASS
+
+### How to organise (SMACSS)?
+
+With SASS sample codes
+
+### How to name (BEM)?
+
+With SASS sample codes
 
 
 
