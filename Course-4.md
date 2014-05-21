@@ -1,4 +1,4 @@
-### HTML5 & CSS3 overview (2 sessions 1.5/each)
+### Responsive web design (RWD) (2 sessions 1.5/each)
 
 ### Summary:
  This course is aimed at developers who are confident with HTML and CSS and want to learn about the latest techniques for designing and building webpages. The course concentrates on using the new semantic markup in HTML5, and on the use of media queries and other techniques for building pages that configure themselves automatically depending on screen size, from mobile and up. You will also learn how to use newer CSS3 selectors and properties for rounded corners, transparencies, gradients and more. 
