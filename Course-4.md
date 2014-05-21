@@ -10,6 +10,7 @@
 
 * HTML5 Markup: (20 minutes)
  * Planning a document structure based on the new HTML5 semantic elements.
+ * (utilize code snippets only)
  * When to use div tags.
  * When to use sections, articles, headers, footers and nav elements.
  * How headings work within HTML5 elements.
@@ -28,6 +29,7 @@
  
 * Front-End Frameworks: (20 minutes)
  * Bootstrap.
+ * (versioning and why we are going to use version 2.3.2, SWS IE7)
  * HTML5 boilerplate.
 
 * Responsive Web Design: (20 minutes)
