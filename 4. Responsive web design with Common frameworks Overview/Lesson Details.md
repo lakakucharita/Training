@@ -28,3 +28,4 @@
 1. [What is the difference between responsive vs. adaptive web design?](http://www.techrepublic.com/blog/web-designer/what-is-the-difference-between-responsive-vs-adaptive-web-design/)
 2. [Create Fluid Layouts in HTML5 and CSS3](http://www.creativebloq.com/css3/create-fluid-layouts-html5-and-css3-3142768)
 3. [Fluid Images](http://alistapart.com/article/fluid-images)
+4. [Eric Meyer's "Reset CSS"](http://meyerweb.com/eric/tools/css/reset/)
