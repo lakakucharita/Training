@@ -35,12 +35,14 @@
 * Design your desktop view first then add more CSS styles for smaller views.
   * Hide elements that are not required to be seen on smaller views
   * Start big then filter
+
 #### Mobile-first Approach [6]
 * Design your mobile view first. Just add more CSS styles for larger views.
   * Know what's important and display that first - What do you do when you lose 80% of your screen real estate?
   * Start small then enhance
   * Harness mobile functionalities - innovation
   * Styles are defined as they are needed which keeps the file size down [7]
+
 #### Fluid Columns [2]
 * Designs usually have layouts that uses fixed dimensions
   * How should we convert these fixed-size layouts to flexible ones?
